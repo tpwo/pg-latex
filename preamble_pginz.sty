@@ -1,0 +1,52 @@
+\ProvidesPackage{preamble_pginz}
+% This preamble is intended to work with pginz.cls
+
+% Orinal packages from PG template
+% \usepackage[polish]{babel}
+\usepackage{float}
+\usepackage{svg}
+\svgpath{{./svg/}}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{pdfpages}
+
+% My additional packages
+\usepackage{tabularx} % Package for better tables
+\usepackage{blindtext}
+\usepackage[version=4]{mhchem}
+\usepackage{gensymb}
+\usepackage{tabulary}
+\usepackage{array}
+\usepackage{url}
+\usepackage{rotating}
+% \usepackage{textcomp}
+
+% add custom float named Program to label source code like figures and tables
+\newfloat{program}{tbp}{lst}[chapter]
+\floatname{program}{Program}
+\captionsetup[program]{justification=centering, labelfont=bf}
+
+\newenvironment{symbols}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{}l<{} @{\hskip1.5em -- \hskip1.5em} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}-{}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+
+\newenvironment{conditions*}
+  {\par\vspace{\abovedisplayskip}\noindent
+   \tabularx{\columnwidth}{>{$}l<{$} @{${}-{}$} >{\raggedright\arraybackslash}X}}
+  {\endtabularx\par\vspace{\belowdisplayskip}}
+
+
+% Below this comment is one of the working ways of adjusting the width of a column,
+% package array is somewhat conneted with that, below line still works without it, though
+% \newcolumntype{J}{>{\arraybackslash}m{4.3cm}}
+
+% USER-DEFINED MACROS
+\newcommand{\myemph}[1]{\emph{\textrm{#1}}} % custom emphasize
+
+% These symbols are rather not necessary, because they don't mean anything in Polish law
+% \newcommand{\reserved}{\textsuperscript{\textregistered\:}} % All rights reserved symbol
+% \newcommand{\cpright}{\textsuperscript{\textcopyright\:}} % Copyrigth symbol
