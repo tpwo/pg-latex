@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{pginz}
+\ProvidesClass{pg}
 
 \newcommand{\headlinecolor}{\normalcolor}
 \LoadClass[10pt,a4paper,twoside]{report}

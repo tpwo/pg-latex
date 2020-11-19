@@ -2,8 +2,8 @@
 
 Basic usage in `main.tex`:
 ```tex
-\documentclass{pginz}
-\usepackage{preamble_pginz}
+\documentclass{pg}
+\usepackage{preamble_pg}
 
 \begin{document}
 
