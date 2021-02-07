@@ -4,6 +4,13 @@ The intention of this repo is to provide a working LaTeX template for writing ba
 The template was prepared to be compliant with editorial guidelines from the year 2018 which are available on the [university website](https://pg.edu.pl/documents/8597924/15531473/ZR%2022-2018) (document contains guidelines in Polish and English).
 Some inspiration was taken also from [guidelines from the year 2014](https://eti.pg.edu.pl/documents/1115629/0/zarz%C4%85dzenie%20wytyczne%20pracy) which are more detailed than the latest version.
 
+## Provided files
+
+The configuration enforced by the editorial guidelines is included solely in the `pg.cls` file and it is fine to only use that file.
+In `preamble_pg.sty` there are some additional settings and packages which might be helpful (i.e. they were helpful to the author) in writing a thesis but are totally optional.
+The later text is written with the assumption that the user wants to use both files.
+If one's decision is different, skip the line `\usepackage{pg-latex/preamble_pg}` in your main `.tex` file.
+
 ## Suggested setup process
 
 ### Git submodule
@@ -21,7 +28,7 @@ For correct setup remember to commit the `.gitmodules` and `pg-latex` which appe
 git commit -m "Add submodule https://github.com/trivvz/pg-latex.git"
 ```
 
-For more information about the submodules refer to the [official documentation](https://git-scm.com/docs/git-submodule).
+For more information about the submodules refer to [the official git submodule documentation](https://git-scm.com/docs/git-submodule).
 
 ### Plain copy
 

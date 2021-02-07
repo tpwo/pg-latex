@@ -1,11 +1,8 @@
 \ProvidesPackage{pg-latex/preamble_pg}
 % This preamble is intended to work with pg.cls
 
-% Orinal packages from PG template I found
-% \usepackage[polish]{babel}
 \usepackage{float}
 \usepackage{svg}
-% \svgpath{{./svg/}}
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{pdfpages}
@@ -19,9 +16,8 @@
 \usepackage{array}
 \usepackage{url}
 \usepackage{rotating}
-% \usepackage{textcomp}
 
-% add custom float named Program to label source code like figures and tables
+% Add custom float named Program to label source code like figures and tables
 \newfloat{program}{tbp}{lst}[chapter]
 \floatname{program}{Program}
 \captionsetup[program]{justification=centering, labelfont=bf}
@@ -39,14 +35,9 @@
    \tabularx{\columnwidth}{>{$}l<{$} @{${}-{}$} >{\raggedright\arraybackslash}X}}
   {\endtabularx\par\vspace{\belowdisplayskip}}
 
-
-% Below this comment is one of the working ways of adjusting the width of a column,
-% package array is somewhat conneted with that, below line still works without it, though
-% \newcolumntype{J}{>{\arraybackslash}m{4.3cm}}
-
 % USER-DEFINED MACROS
-\newcommand{\myemph}[1]{\emph{\textrm{#1}}} % custom emphasize
-
-% These symbols are rather not necessary, because they don't mean anything in Polish law
-% \newcommand{\reserved}{\textsuperscript{\textregistered\:}} % All rights reserved symbol
-% \newcommand{\cpright}{\textsuperscript{\textcopyright\:}} % Copyrigth symbol
+\newcommand{\myemph}[1]{\emph{\textrm{#1}}} % Custom emphasize
+\newcommand{\cmark}{\ding{51}} % Tick symbol
+\newcommand{\xmark}{\ding{55}} % Cross symbol
+\newcommand{\reserved}{\textsuperscript{\textregistered\:}} % All Rights Reserved symbol
+\newcommand{\cpright}{\textsuperscript{\textcopyright\:}} % Copyrigth symbol
