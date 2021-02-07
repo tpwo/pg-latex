@@ -11,15 +11,28 @@ In `preamble_pg.sty` there are some additional settings and packages which might
 The later text is written with the assumption that the user wants to use both files.
 If one's decision is different, skip the line `\usepackage{pg-latex/preamble_pg}` in your main `.tex` file.
 
+## Dual-language support
+
+The template provided in this repo should be compatible with both English and Polish.
+However, not all language-specific settings can coexist thus different branches were introduced: [polish](https://github.com/trivvz/pg-latex/tree/polish) and [english](https://github.com/trivvz/pg-latex/tree/english) (added for verbosity, same as `master`).
+
 ## Suggested setup process
 
 ### Git submodule
 
 The suggested way is to import this template as a `git submodule`.
-Use the following command in your LaTeX workspace in order to clone and set up this repo as a submodule:
+Use one of the following commands in your LaTeX git repo in order to clone and set up this template as a submodule.
+
+Polish version:
 
 ```bash
-git submodule add https://github.com/trivvz/pg-latex.git
+git submodule add -b polish https://github.com/trivvz/pg-latex.git
+```
+
+English version:
+
+```bash
+git submodule add -b english https://github.com/trivvz/pg-latex.git
 ```
 
 For correct setup remember to commit the `.gitmodules` and `pg-latex` which appeared in your staging area after executing the above command:
@@ -32,11 +45,11 @@ For more information about the submodules refer to [the official git submodule d
 
 ### Plain copy
 
-If for any reason, you don't want to use git submodules you can create a `pg-latex` folder in your local workspace and copy `pg.cls` and `preamble_pg.sty` into it to achieve the same effect. 
+If for any reason, you don't want to use git submodules you can create a `pg-latex` folder in your local workspace and copy `pg.cls` and `preamble_pg.sty` into it to achieve the same effect (remember about switching to the correct branch before). 
 
 ## Use in your LaTeX project
 
-For the correct setup without LaTeX warnings you need to have a `pg-latex` folder in the same path as your main file (i.e. `main.tex`).
+For the correct setup without LaTeX warnings you need to have a `pg-latex` folder in the same path as your main file (usually `main.tex`).
 It is possible to set up different paths but the manual editing  of files is needed in this case as `\ProvidesClass` in `pg.cls` and `\ProvidesPackage` in `preamble_pg.sty` need to reflect a folder structure of your workspace.
 By default it is:
 
