@@ -124,6 +124,11 @@ You might find it more convenient to put all these additional configurations in 
 The provided template should be compatible with all current LaTeX distributions.
 In particular, it was tested to be working with [TeX Live](https://tug.org/texlive/) and [LaTeX Workshop](https://github.com/James-Yu/LaTeX-Workshop) extension for VS Code.
 
+### Test TeX file
+
+In the [test](test/) folder, there is a [main.tex](test/main.tex) file which you can try to compile in order to check if your LaTeX installation is configured correctly and all packages used by the template are downloaded.
+Note that there will be warnings about wrong paths in `\documentclass{../pg}` and `\usepackage{../preamble_pg}` but you can ignore them as the document will be created correctly despite this.
+
 ## See also
 - [pg-beamer](https://github.com/jachoo/pg-beamer), a template for creating LaTeX presentations
 - [PG_LaTeX_Templates](https://github.com/splaw1k/PG_LaTeX_Templates), another PG template available on GitHub
