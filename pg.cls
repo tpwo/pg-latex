@@ -55,7 +55,7 @@
 {\normalfont\fontsize{10}{12}\itshape}{\thesubsection.}{0.5em}{}
 \titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
 
-
+% Capitalize the following
 \addto\captionsenglish{\renewcommand{\contentsname}{\uppercase{Table of contents}}}
 \addto\captionsenglish{\renewcommand{\bibname}{\uppercase{Bibliography}}}
 \addto\captionsenglish{\renewcommand{\listfigurename}{\uppercase{List of figures}}}
