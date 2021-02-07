@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{pg}
+\ProvidesClass{pg-latex/pg}
 
 \newcommand{\headlinecolor}{\normalcolor}
 \LoadClass[10pt,a4paper,twoside]{report}
@@ -28,7 +28,7 @@
 \RequirePackage{csquotes}
 % \RequirePackage[backend=biber, style=numeric, sorting=none]{biblatex}
 \RequirePackage{graphicx}
-\graphicspath{{./images/},{./photos/},{./test_results/},{./results_comparison/}}
+% \graphicspath{{./images/},{./photos/},{./test_results/},{./results_comparison/}}
 \RequirePackage{microtype}
 
 %*************\
