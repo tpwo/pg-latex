@@ -56,10 +56,10 @@
 \titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
 
 % Capitalize the following
-\addto\captionsenglish{\renewcommand{\contentsname}{\uppercase{Table of contents}}}
-\addto\captionsenglish{\renewcommand{\bibname}{\uppercase{Bibliography}}}
-\addto\captionsenglish{\renewcommand{\listfigurename}{\uppercase{List of figures}}}
-\addto\captionsenglish{\renewcommand{\listtablename}{\uppercase{List of tables}}}
+\addto\captionsenglish{\renewcommand{\contentsname}{\uppercase{Spis treści}}}
+\addto\captionsenglish{\renewcommand{\bibname}{\uppercase{Wykaz literatury}}}
+\addto\captionsenglish{\renewcommand{\listfigurename}{\uppercase{Wykaz rysunków}}}
+\addto\captionsenglish{\renewcommand{\listtablename}{\uppercase{Wykaz tabel}}}
 
 \usepackage[titles]{tocloft} % Unbold chapter names
 
