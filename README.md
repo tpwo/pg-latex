@@ -1,9 +1,55 @@
 # PG LaTeX template
 
-Basic usage in `main.tex`:
+The intention of this repo is to provide a working LaTeX template for writing bachelor and master theses for students of Politechnika Gdańska (Gdańsk University of Technology).
+The template was prepared to be compliant with editorial guidelines from the year 2018 which are available on the [university website](https://pg.edu.pl/documents/8597924/15531473/ZR%2022-2018) (document contains guidelines in Polish and English).
+Some inspiration was taken also from [guidelines from the year 2014](https://eti.pg.edu.pl/documents/1115629/0/zarz%C4%85dzenie%20wytyczne%20pracy) which are more detailed than the latest version.
+
+## Suggested setup process
+
+### Git submodule
+
+The suggested way is to import this template as a `git submodule`.
+Use the following command in your LaTeX workspace in order to clone and set up this repo as a submodule:
+
+```bash
+git submodule add https://github.com/trivvz/pg-latex.git
+```
+
+For correct setup remember to commit the `.gitmodules` and `pg-latex` which appeared in your staging area after executing the above command:
+
+```bash
+git commit -m "Add submodule https://github.com/trivvz/pg-latex.git"
+```
+
+For more information about the submodules refer to the [official documentation](https://git-scm.com/docs/git-submodule).
+
+### Plain copy
+
+If for any reason, you don't want to use git submodules you can create a `pg-latex` folder in your local workspace and copy `pg.cls` and `preamble_pg.sty` into it to achieve the same effect. 
+
+## Use in your LaTeX project
+
+For the correct setup without LaTeX warnings you need to have a `pg-latex` folder in the same path as your main file (i.e. `main.tex`).
+It is possible to set up different paths but the manual editing  of files is needed in this case as `\ProvidesClass` in `pg.cls` and `\ProvidesPackage` in `preamble_pg.sty` need to reflect a folder structure of your workspace.
+By default it is:
+
 ```tex
-\documentclass{pg}
-\usepackage{preamble_pg}
+\ProvidesClass{pg-latex/pg}
+```
+and
+
+```tex
+\ProvidesPackage{pg-latex/preamble_pg}
+```
+
+### Basic usage in your project
+
+For the basic use of this template you just need to import the document class and the preamble:
+
+```tex
+\documentclass{pg-latex/pg}
+\usepackage{pg-latex/preamble_pg}
+
 
 \begin{document}
 
@@ -12,10 +58,52 @@ Basic usage in `main.tex`:
 \end{document}
 ```
 
-Suggested use is via [git submodules](https://git-scm.com/docs/git-submodule).
-Use the following command in your LaTeX repo in order to clone and set up this repo as a submodule:
+### Additional config
 
-```bash
-git submodule add https://github.com/trivvz/pg-latex.git
+Of course, you might want to include additional configuration before your `\begin{document}`, e.g. paths for graphics and photos or some listing files with defined language highlighting:
+
+```tex
+\documentclass{pg-latex/pg}
+\usepackage{pg-latex/preamble_pg}
+
+% Configure paths
+\graphicspath{{some-img-path/},{some-other-img-path/}}
+\svgpath{{some-svg-path/}}
+
+% Add some language syntax highlighting
+\input{some_listing.sty}
+
+
+\begin{document}
+
+<...>
+
+\end{document}
 ```
 
+### Additional preamble
+
+You might find it more convenient to put all these additional configurations in an external file which can be imported as an additional preamble:
+
+```tex
+\documentclass{pg-latex/pg}
+\usepackage{pg-latex/preamble_pg}
+
+\usepackage{path_to_my_preamble}
+
+
+\begin{document}
+
+<...>
+
+\end{document}
+```
+
+## Compatibility
+
+The provided template should be compatible with all current LaTeX distributions.
+In particular, it was tested to be working with [TeX Live](https://tug.org/texlive/) and [LaTeX Workshop](https://github.com/James-Yu/LaTeX-Workshop) extension for VS Code.
+
+## Contributing
+
+All fixes, proposed updates, or comments are welcome.
