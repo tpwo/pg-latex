@@ -6,8 +6,8 @@ Some inspiration was taken also from [guidelines from the year 2014](https://eti
 
 ## Provided files
 
-The configuration enforced by the editorial guidelines is included solely in the `pg.cls` file and it is fine to only use that file.
-In `preamble_pg.sty` there are some additional settings and packages which might be helpful (i.e. they were helpful to the author) in writing a thesis but are totally optional.
+The configuration enforced by the editorial guidelines is included solely in the [pg.cls](pg.cls) file and it is fine to only use that file.
+In [preamble_pg.sty](preamble_pg.sty) there are some additional settings and packages which might be helpful (i.e. they were helpful to the author) in writing a thesis but are totally optional.
 The later text is written with the assumption that the user wants to use both files.
 If one's decision is different, skip the line `\usepackage{pg-latex/preamble_pg}` in your main `.tex` file.
 
@@ -47,12 +47,12 @@ For more information about the submodules refer to [the official git submodule d
 
 ### Plain copy
 
-If for any reason, you don't want to use git submodules you can create a `pg-latex` folder in your local workspace and copy `pg.cls` and `preamble_pg.sty` into it to achieve the same effect (remember about switching to the correct branch before). 
+If for any reason, you don't want to use git submodules you can create a `pg-latex` folder in your local workspace and copy [pg.cls](pg.cls) and [preamble_pg.sty](preamble_pg.sty) into it to achieve the same effect (remember about switching to the correct branch before). 
 
 ## Use in your LaTeX project
 
 For the correct setup without LaTeX warnings you need to have a `pg-latex` folder in the same path as your main file (usually `main.tex`).
-It is possible to set up different paths but the manual editing  of files is needed in this case as `\ProvidesClass` in `pg.cls` and `\ProvidesPackage` in `preamble_pg.sty` need to reflect a folder structure of your workspace.
+It is possible to set up different paths but the manual editing  of files is needed in this case as `\ProvidesClass` in [pg.cls](pg.cls) and `\ProvidesPackage` in [preamble_pg.sty](preamble_pg.sty) need to reflect a folder structure of your workspace.
 By default it is:
 
 ```tex
