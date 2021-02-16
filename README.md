@@ -14,7 +14,8 @@ If one's decision is different, skip the line `\usepackage{pg-latex/preamble_pg}
 ## Dual-language support
 
 The template provided in this repo should be compatible with both English and Polish.
-However, not all language-specific settings can coexist thus different branches were introduced: [polish](https://github.com/trivvz/pg-latex/tree/polish) and [english](https://github.com/trivvz/pg-latex/tree/english) (added for verbosity, same as `master`).
+However, not all language-specific settings can coexist thus [polish](https://github.com/trivvz/pg-latex/tree/polish) branch was introduced.
+`master` branch corresponds to the English version.
 
 ## Suggested setup process
 
@@ -23,16 +24,16 @@ However, not all language-specific settings can coexist thus different branches 
 The suggested way is to import this template as a `git submodule`.
 Use one of the following commands in your LaTeX git repo in order to clone and set up this template as a submodule.
 
+English version (default):
+
+```bash
+git submodule add https://github.com/trivvz/pg-latex.git
+```
+
 Polish version:
 
 ```bash
 git submodule add -b polish https://github.com/trivvz/pg-latex.git
-```
-
-English version:
-
-```bash
-git submodule add -b english https://github.com/trivvz/pg-latex.git
 ```
 
 For correct setup remember to commit the `.gitmodules` and `pg-latex` which appeared in your staging area after executing the above command:
