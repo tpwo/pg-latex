@@ -38,6 +38,7 @@ git submodule add -b english https://github.com/trivvz/pg-latex.git
 For correct setup remember to commit the `.gitmodules` and `pg-latex` which appeared in your staging area after executing the above command:
 
 ```bash
+git add .gitmodules pg-latex
 git commit -m "Add submodule https://github.com/trivvz/pg-latex.git"
 ```
 
