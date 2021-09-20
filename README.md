@@ -15,7 +15,7 @@ If one's decision is different, skip the line `\usepackage{pg-latex/preamble_pg}
 
 The template provided in this repo should be compatible with both English and Polish.
 However, not all language-specific settings can coexist thus [polish](https://github.com/trivvz/pg-latex/tree/polish) branch was introduced.
-`master` branch corresponds to the English version.
+`main` branch corresponds to the English version.
 
 ## Suggested setup process
 
