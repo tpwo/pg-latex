@@ -26,7 +26,7 @@ one's decision is different, skip the line
 
 The template provided in this repo should be compatible with both
 English and Polish. However, not all language-specific settings can
-coexist thus [polish](https://github.com/trivvz/pg-latex/tree/polish)
+coexist thus [polish](https://github.com/wojdatto/pg-latex/tree/polish)
 branch was introduced. `main` branch corresponds to the English version.
 
 ## Suggested setup process
@@ -40,13 +40,13 @@ and set up this template as a submodule.
 English version (default):
 
 ```bash
-git submodule add https://github.com/trivvz/pg-latex.git
+git submodule add https://github.com/wojdatto/pg-latex.git
 ```
 
 Polish version:
 
 ```bash
-git submodule add -b polish https://github.com/trivvz/pg-latex.git
+git submodule add -b polish https://github.com/wojdatto/pg-latex.git
 ```
 
 For correct setup remember to commit the `.gitmodules` and `pg-latex`
@@ -54,7 +54,7 @@ which appeared in your staging area after executing the above command:
 
 ```bash
 git add .gitmodules pg-latex
-git commit -m "Add submodule https://github.com/trivvz/pg-latex.git"
+git commit -m "Add submodule https://github.com/wojdatto/pg-latex.git"
 ```
 
 For more information about the submodules refer to [the official git
