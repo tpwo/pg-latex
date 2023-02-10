@@ -1,4 +1,4 @@
-# PG LaTeX template
+# PG LaTeX thesis template
 
 The intention of this repo is to provide a working LaTeX template for
 writing bachelor and master theses for students of Politechnika Gdańska
@@ -11,178 +11,99 @@ was taken also from [guidelines from the year
 2014](https://eti.pg.edu.pl/documents/1115629/0/zarz%C4%85dzenie%20wytyczne%20pracy)
 which are more detailed than the latest version.
 
-## Provided files
+## Supported languages
 
-The configuration enforced by the editorial guidelines is included
-solely in the [pg.cls](pg.cls) file and it is fine to only use that
-file. In [preamble_pg.sty](preamble_pg.sty) there are some additional
-settings and packages which might be helpful (i.e. they were helpful to
-the author) in writing a thesis but are totally optional. The later text
-is written with the assumption that the user wants to use both files. If
-one's decision is different, skip the line
-`\usepackage{pg-latex/preamble_pg}` in your main `.tex` file.
+The only supported language is Polish, however it shouldn't be very hard
+to adjust the template for writing in English. Polish requires
+additional options, so some of the changes is just removing
+Polish-specific settings.
 
-## Language support
+### Then why is this readme in English?
 
-This repo supports writing the thesis in Polish, but by changing these
-four lines you should be able to switch everything to English:
+Mostly out of habit, as I've never experienced any
+`addBag/dodajWorek`:tm: issues during my studies, so I always tend to
+write code and documentation in English even if Polish here makes more
+sense.
 
-```diff
-diff --git a/pg.cls b/pg.cls
-@@ -56,10 +56,10 @@
- \titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+## Setup
 
- % Capitalize the following
--\addto\captionsenglish{\renewcommand{\contentsname}{\uppercase{Spis treści}}}
--\addto\captionsenglish{\renewcommand{\bibname}{\uppercase{Wykaz literatury}}}
--\addto\captionsenglish{\renewcommand{\listfigurename}{\uppercase{Wykaz rysunków}}}
--\addto\captionsenglish{\renewcommand{\listtablename}{\uppercase{Wykaz tabel}}}
-+\addto\captionsenglish{\renewcommand{\contentsname}{\uppercase{Table of contents}}}
-+\addto\captionsenglish{\renewcommand{\bibname}{\uppercase{Bibliography}}}
-+\addto\captionsenglish{\renewcommand{\listfigurename}{\uppercase{List of figures}}}
-+\addto\captionsenglish{\renewcommand{\listtablename}{\uppercase{List of tables}}}
+Clone the repo, and make sure that `main.tex` compiles into a PDF on
+your system. The template was successfully tested against TeXLive 2022.
 
- \usepackage[titles]{tocloft} % Unbold chapter names
+### Overleaf
+
+If you prefer working in Overleaf.com, here you can access the files
+for this template: <https://www.overleaf.com/read/mngqxzfvdhpk>.
+
+## How to use?
+
+This repo should be treated a sample project, so you're supposed to copy
+the files and edit them freely. The most of the actual settings live in
+`config/preamble.sty`, and to be compliant with PG, you probably don't
+want to modify existing settings there unless you're fixing something
+(pull request is welcomed in this case).
+
+Depending on your needs, you might want to include more packages and
+settings in this file to get access to some more niche LaTeX features
+provided by packages not included in the template by default.
+
+## Structure and conventions
+
+The below diagram describes all important parts of the template. You
+should also take a look at the notes in the example chapter which
+describes how to add figures, tables, and citations along with some good
+practices. It's a good idea to analyze both the raw TeX, and the
+generated PDF (you can get the PDF easily from the Overleaf linked
+above).
+
+```
+main.tex
+ \_ Entry point of the template, start here to understand how the rest
+    of the files is referenced
+config
+  \_ preamble.sty      # The heart of the template with most settings
+  \_ bibliography.bib  # Put your bibliography positions here
+  \_ macros.sty        # Define your macros here
+chapters # A tex file per chapter
+  \_ 01.tex
+  \_ 02.tex
+figures
+  \_ Graphics, images etc.
+misc
+  \_ Tex files which are not chapters but are part of the thesis
+pdf
+  \_ Here you should put PDFs which will be included as separate pages
+     into your thesis
+tables
+  \_ Big and complex tables can be defined here and with `\input{}`
+     included in chapters
 ```
 
-## Suggested setup process
+## Misc
 
-### Git submodule
-
-The suggested way is to import this template as a `git submodule`. Use
-one of the following commands in your LaTeX git repo in order to clone
-and set up this template as a submodule.
-
-English version (default):
-
-```bash
-git submodule add https://github.com/wojdatto/pg-latex.git
-```
-
-For correct setup remember to commit the `.gitmodules` and `pg-latex`
-which appeared in your staging area after executing the above command:
-
-```bash
-git add .gitmodules pg-latex
-git commit -m "Add submodule https://github.com/wojdatto/pg-latex.git"
-```
-
-For more information about the submodules refer to [the official git
-submodule documentation](https://git-scm.com/docs/git-submodule).
-
-### Plain copy
-
-If for any reason, you don't want to use git submodules you can create a
-`pg-latex` folder in your local workspace and copy [pg.cls](pg.cls) and
-[preamble_pg.sty](preamble_pg.sty) into it to achieve the same effect
-(remember about switching to the correct branch before).
-
-## Use in your LaTeX project
-
-For the correct setup without LaTeX warnings you need to have a
-`pg-latex` folder in the same path as your main file (usually
-`main.tex`). It is possible to set up different paths but the manual
-editing  of files is needed in this case as `\ProvidesClass` in
-[pg.cls](pg.cls) and `\ProvidesPackage` in
-[preamble_pg.sty](preamble_pg.sty) need to reflect a folder structure of
-your workspace. By default it is:
-
-```tex
-\ProvidesClass{pg-latex/pg}
-```
-
-and
-
-```tex
-\ProvidesPackage{pg-latex/preamble_pg}
-```
-
-### Basic usage in your project
-
-For the basic use of this template you just need to import the document
-class and the preamble:
-
-```tex
-\documentclass{pg-latex/pg}
-\usepackage{pg-latex/preamble_pg}
-
-
-\begin{document}
-
-<...>
-
-\end{document}
-```
-
-### Additional config
-
-Of course, you might want to include additional configuration before
-your `\begin{document}`, e.g. paths for graphics and photos or some
-listing files with defined language highlighting:
-
-```tex
-\documentclass{pg-latex/pg}
-\usepackage{pg-latex/preamble_pg}
-
-% Configure paths
-\graphicspath{{some-img-path/},{some-other-img-path/}}
-\svgpath{{some-svg-path/}}
-
-% Add some language syntax highlighting
-\input{some_listing.sty}
-
-
-\begin{document}
-
-<...>
-
-\end{document}
-```
-
-### Additional preamble
-
-You might find it more convenient to put all these additional
-configurations in an external file which can be imported as an
-additional preamble:
-
-```tex
-\documentclass{pg-latex/pg}
-\usepackage{pg-latex/preamble_pg}
-
-\usepackage{path_to_my_preamble}
-
-
-\begin{document}
-
-<...>
-
-\end{document}
-```
-
-## Compatibility
-
-The provided template should be compatible with all current LaTeX
-distributions. In particular, it was tested to be working with [TeX
-Live](https://tug.org/texlive/) and [LaTeX
-Workshop](https://github.com/James-Yu/LaTeX-Workshop) extension for VS
-Code.
-
-### Test TeX file
-
-In the [test](test/) folder, there is a [main.tex](test/main.tex) file
-which you can try to compile in order to check if your LaTeX
-installation is configured correctly and all packages used by the
-template are downloaded. Note that there will be warnings about wrong
-paths in `\documentclass{../pg}` and `\usepackage{../preamble_pg}` but
-you can ignore them as the document will be created correctly despite
-this.
+In some places, you can notice a bit strange formatting with LaTeX
+comments `%` at the end of lines. This was done to prevent automatic
+wrapping of lines by
+[stkb/Rewrap](https://marketplace.visualstudio.com/items?itemName=stkb.rewrap)
+VS Code extension.
 
 ## See also
-- [pg-beamer](https://github.com/jachoo/pg-beamer), a template for
-  creating LaTeX presentations
-- [PG_LaTeX_Templates](https://github.com/splaw1k/PG_LaTeX_Templates),
-  another PG template available on GitHub
+
+* [jachoo/pg-beamer](https://github.com/jachoo/pg-beamer)\
+  A PG template for creating LaTeX presentations
+
+* [splaw1k/PG_LaTeX_Templates](https://github.com/splaw1k/PG_LaTeX_Templates)\
+  Another PG thesis template available on GitHub
+
+* [typografia.info](https://typografia.info/podstawy)\
+  Writing a thesis is not writing a book, but some typographic knowledge
+  is nice to have if you decided to be a LaTeX guy (some people *really*
+  prefer Word)
+
+* [James-Yu/LaTeX-Workshop](https://github.com/James-Yu/LaTeX-Workshop)\
+  If you're new to LaTeX and already familiar with VS Code, you can try
+  this extension before installing full-fledged LaTeX "IDE"
 
 ## Contributing
 
-All fixes, proposed updates, or comments are welcome.
+All fixes, proposed updates, or comments are welcome!

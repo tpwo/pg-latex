@@ -1,0 +1,142 @@
+% Configure settings for Polish
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+
+\usepackage[a4paper,inner=3.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+% Indent first paragraph after section header
+\usepackage{indentfirst}
+
+% Set interline to 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+% Set font to Helvetica (Arial is a clone of it popularized by MS):
+% https://tex.stackexchange.com/a/23960/255477
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Add dots for labels of chapters, sections, subsections, and
+% subsubsections in TOC, and other places where they are mentioned (e.g.
+% list of figures)
+\usepackage[dotinlabels]{titletoc}
+
+% Configure the font of the headers and add dots after numbers in text
+\usepackage{titlesec}
+
+\titleformat{\chapter}[hang]
+    {\normalfont\fontsize{12}{15}\bfseries}%
+    {\thechapter.}%
+    {.5em}%
+    {\MakeUppercase}%
+
+\titleformat{\section}[hang]
+    {\normalfont\fontsize{10}{12}\bfseries\itshape}%
+    {\thesection.}%
+    {.5em}%
+    {\MakeUppercase}%
+
+\titleformat{\subsection}[hang]
+    {\normalfont\fontsize{10}{12}\itshape}%
+    {\thesubsection.}%
+    {.5em}%
+    {\MakeUppercase}%
+
+\titleformat{\subsubsection}[hang]
+    {\normalfont\fontsize{10}{12}\itshape}%
+    {\thesubsection.}%
+    {.5em}%
+    {\MakeUppercase}%
+
+% Set upper spacing to 12pt, and bottom spacing to 6pt. It relies on
+% titlesec
+\titlespacing*{\chapter}{0pt}{12pt}{6pt}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+
+% Create hyperlinks for TOC, references, etc.
+\usepackage[hidelinks]{hyperref}
+
+% Setup biblatex for bibliography
+\usepackage{csquotes}
+\usepackage[sorting=none,giveninits=true]{biblatex}
+\addbibresource{config/bibliography.bib}
+
+% Rename list of figures and list of tables
+\addto\captionspolish{%
+    \renewcommand\listfigurename{Wykaz rysunków}}%
+\addto\captionspolish{%
+    \renewcommand\listtablename{Wykaz tabel}}
+
+% Include images
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+% You can include multiple folders by having them in separate {}:
+% \graphicspath{{figures/}{images/}}
+
+% Allows to put PDFs as whole new pages
+\usepackage{pdfpages}
+
+% Allows putting floats precisely where one wishes with H
+\usepackage{float}
+
+% Include tables with powerful and easy to use tabularray package
+\usepackage{tabularray}
+
+% Configure captions.
+\usepackage[font=small, labelsep=period]{caption}
+\captionsetup[figure]{justification=centering, name=Rys., labelfont=bf}
+\captionsetup[table]{justification=centering, name=Tabela, labelfont=bf}
+
+% Define environment for list of symbols & abbreviations
+\newenvironment{symbols}
+    {\par\vspace{\abovedisplayskip}\noindent\begin{tblr}
+        {>{}l<{}@{\hskip1.5em -- \hskip1.5em} l}%
+    }%
+    {\end{tblr}\par\vspace{\belowdisplayskip}}
+
+% Define environment for equation conditions
+\usepackage{tabularx}
+\newenvironment{conditions}
+    {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}
+        {>{$}l<{$}@{${}-{}$}l}%
+    }%
+    {\end{tabular}\par\vspace{\belowdisplayskip}}%
+
+\newenvironment{conditions*}
+    {\par\vspace{\abovedisplayskip}\noindent\tabularx{\columnwidth}{>{$}l<{$}
+        @{${}-{}$}>{\raggedright\arraybackslash}X}%
+    }%
+    {\endtabularx\par\vspace{\belowdisplayskip}}%
+
+% Allow for Polish diacritics in math mode (but it changes font a bit,
+% so I don't like to use it) Reference:
+% https://tex.stackexchange.com/a/249901/255477
+\usepackage{mathtools}
+
+% Don't automatically put spaces after commas in math mode. Good when
+% having a comma as a decimal separator. Reference:
+% https://tex.stackexchange.com/a/24165/255477
+\usepackage{icomma}
+
+% Listings for displaying source code. Use Courier font for that.
+% See wiki for the basic usage:
+% https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{xcolor}
+
+% If using a niche language, you might need to add a custom listing
+% definition for it in order to have colored syntax. To keep things
+% clear, you can put the definitions in a separate file and just input
+% it here:
+% \input{config/listings-CUSTOMLANG.sty}
+
+% You can set a default listing language for enabling syntax coloring
+% \lstset{language=DEFAULT}
+
+% Specialized user-defined macros can be stored in a separate file
+\usepackage{config/macros}

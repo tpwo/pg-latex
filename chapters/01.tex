@@ -1,0 +1,101 @@
+\chapter{Przykładowy rozdzial}
+% You can label chapter to refer to it later in the text, e.g. in the
+% later chapter.
+\label{chpt:przykladowy-rozdzial}
+
+Cała praca powinna składać się z rodziałów \emph{chapters}, które dzielą
+się na podrozdziały \emph{sections}. Podrozdziały dodatkowo
+posiadają swoje punkty \emph{subsections}. Cała ta struktura widoczna
+jest w spisie treści. Oprócz tego, LaTeX umożliwia na dzielenie punktów
+podrozdziałów na poszczególne części \emph{subsubsections}, które przy
+ustawieniach tego szablonu są niewidoczne w spisie treści. Wciąż mogą
+być jednak przydatne do dzielenia dłuższych punktów podrozdziałów na
+logiczne części.
+
+\section{Przykładowy podrozdział}
+
+\subsection{Przykładowy punkt podrozdziału}
+
+\subsubsection{Rysunki}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.25\linewidth]{przykladowy-rysunek}
+    \caption{Logo książki o LaTeX w Wikibooks
+    \cite{book:latex}}
+    \label{fig:przykladowy-rysunek}
+\end{figure}
+
+Rysunki i tabele należy zamieszczać zgodnie ze wzorem zawsze podając:
+
+\begin{itemize}
+    \item wyśrodkowaną pozycję rysunku: \mono{{\textbackslash}centering};
+    \item wymiary rysunku i nazwę pliku źródłowego;
+    \item podpis pod rysunkiem wraz z cytowaniem, jeśli pochodzi
+    z zewnętrznego źródła;
+    \item etykietę, którą warto zacząć od np.\ \emph{fig}, jako że
+    przestrzeń nazw zdefiniowanych w \mono{{\textbackslash}label} jest
+    globalna.
+\end{itemize}
+
+Jako parametr w \mono{{\textbackslash}includegraphics} podajemy samą
+nazwę pliku bez rozszerzenia. Plik z~rysunkiem należy umieścić
+w folderze \emph{figures} lub innych skonfigurowanych w preambule.
+Dobrym pomysłem jest używanie formatów wektorowych, żeby zachować wysoką
+jakość rysunków przy wydruku. Niestety LaTeX ma bardzo ograniczone
+wsparcie SVG, dlatego częstym wyborem jest konwertowanie grafik
+wektorowych do formatu PDF.
+
+Każdy rysunek powinien mieć odwołanie w tekście. Tu jako przykład
+rysunku służy logo książki o LaTeXu \ref{fig:przykladowy-rysunek}, która
+dostępna jest w Wikibooks.
+
+\subsubsection{Tabele}
+
+\input{tables/01_przykladowa-tabela.tex}
+
+Paczka \emph{tabularray} pozwala na proste definiowanie podstawowych
+i bardzo złożonych tabel. Każda tabela również powinna mieć odwołanie
+w tekście. Tu jako przykład została zdefiniowana tabela
+\ref{tbl:etykieta-tabeli}. Warto zauważyć, że tabele i rysunki
+numerowane są niezależnie, więc ich mogą dzielić ten sam numer. Z tego
+powodu, z kontekstu zawsze powinno wynikać, czy mowa o tabeli, czy
+o~rysunku.
+
+\subsubsection{Cytowania i wykaz literatury}
+
+Pozycje bibliograficzne należy dodawać w pliku
+\emph{config/bibliography.bib} używając standardu biblatex. Pojawią się
+one w wykazie literatury dopiero po tym jak zostaną zacytowane w tekście
+przy użyciu \mono{{\textbackslash}cite}. Jako przykład możemy zacytować
+wspomnianą już książkę o LaTeXu \cite{book:latex}.
+
+\subsubsection{Dobre praktyki}
+
+LaTeX domyślnie używa większego odstępu między dwoma zdaniami niż między
+wyrazami w~środku zdania, co jest popularną
+anglosaską praktyką typograficzną spotykaną również w Polsce.
+Alternatywnym jest podejście francuskie, które używa takich samych
+odstępów między wyrazami, jak między zdaniami. W LaTeXu to drugie
+zachowanie można włączyć przy pomocy opcji
+\mono{{\textbackslash}frenchspacing}.
+
+Jeśli tego nie zrobimy, to należy pamiętać, żeby wszystkie skróty
+stojące w środku zdania i zapisywane z kropką traktować w sposób
+specjalny, tak by nie aktywowały tego zachowania. Da się to zrobić
+poprzez zwykłe dodanie backslasha po kropce, po której odstęp ma się nie
+zwiększyć. Np.\ skrót od \emph{na przykład} zapiszemy w ten sposób:
+\mono{np.\textbackslash}
+
+Alternatywnym sposobem jest dodanie twardej spacji, co można zrobić
+przez podmianę spacji na tyldę \textasciitilde, ale powinna być ona
+używana tylko tam, gdzie faktycznie jest potrzebna, czyli w~praktyce do
+eliminowania sierotek typograficznych na końcach wersów.
+
+\subsubsection{Podsumowanie}
+
+Ten rozdział tłumaczy podstawowe zasady pracy z szablonem na żywych
+przykładach i dlatego warto zobaczyć go zarówno w formie źródłowej jak
+i jako wygenerowany PDF. Oprócz tego, warto przejrzeć pliki
+konfiguracyjne, w których poszczególne ustawienia opatrzone są
+dodatkowymi komentarzami.

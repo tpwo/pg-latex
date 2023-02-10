@@ -1,0 +1,40 @@
+\documentclass[10pt,twoside]{report}
+\usepackage{config/preamble}
+
+\begin{document}
+
+\pagenumbering{gobble}  % Do not number the first pages
+
+% A title page generated from mojaPG
+% \includepdf[pages=-]{pdf/title-page.pdf}
+% \null\newpage
+
+% An author statement generated from mojaPG
+% \includepdf[pages=-]{pdf/author-statement.pdf}
+% \null\newpage
+
+\include{misc/abstract-pl.tex}
+\newpage
+\null\newpage
+
+\include{misc/abstract-en.tex}
+\newpage
+\null\newpage
+
+\pagenumbering{arabic}  % Start numbering on ToC
+\tableofcontents
+
+\include{misc/list-of-symbols.tex}
+
+% Include chapters one-by-one
+\include{chapters/01.tex}
+
+\printbibliography[title={Wykaz literatury},heading=bibintoc]
+
+\listoffigures
+\addcontentsline{toc}{chapter}{Wykaz rysunków}
+
+\listoftables
+\addcontentsline{toc}{chapter}{Wykaz tabel}
+
+\end{document}
