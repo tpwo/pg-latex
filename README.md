@@ -22,12 +22,28 @@ is written with the assumption that the user wants to use both files. If
 one's decision is different, skip the line
 `\usepackage{pg-latex/preamble_pg}` in your main `.tex` file.
 
-## Dual-language support
+## Language support
 
-The template provided in this repo should be compatible with both
-English and Polish. However, not all language-specific settings can
-coexist thus [polish](https://github.com/wojdatto/pg-latex/tree/polish)
-branch was introduced. `main` branch corresponds to the English version.
+This repo supports writing the thesis in Polish, but by changing these
+four lines you should be able to switch everything to English:
+
+```diff
+diff --git a/pg.cls b/pg.cls
+@@ -56,10 +56,10 @@
+ \titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+
+ % Capitalize the following
+-\addto\captionsenglish{\renewcommand{\contentsname}{\uppercase{Spis treści}}}
+-\addto\captionsenglish{\renewcommand{\bibname}{\uppercase{Wykaz literatury}}}
+-\addto\captionsenglish{\renewcommand{\listfigurename}{\uppercase{Wykaz rysunków}}}
+-\addto\captionsenglish{\renewcommand{\listtablename}{\uppercase{Wykaz tabel}}}
++\addto\captionsenglish{\renewcommand{\contentsname}{\uppercase{Table of contents}}}
++\addto\captionsenglish{\renewcommand{\bibname}{\uppercase{Bibliography}}}
++\addto\captionsenglish{\renewcommand{\listfigurename}{\uppercase{List of figures}}}
++\addto\captionsenglish{\renewcommand{\listtablename}{\uppercase{List of tables}}}
+
+ \usepackage[titles]{tocloft} % Unbold chapter names
+```
 
 ## Suggested setup process
 
@@ -41,12 +57,6 @@ English version (default):
 
 ```bash
 git submodule add https://github.com/wojdatto/pg-latex.git
-```
-
-Polish version:
-
-```bash
-git submodule add -b polish https://github.com/wojdatto/pg-latex.git
 ```
 
 For correct setup remember to commit the `.gitmodules` and `pg-latex`
@@ -65,7 +75,7 @@ submodule documentation](https://git-scm.com/docs/git-submodule).
 If for any reason, you don't want to use git submodules you can create a
 `pg-latex` folder in your local workspace and copy [pg.cls](pg.cls) and
 [preamble_pg.sty](preamble_pg.sty) into it to achieve the same effect
-(remember about switching to the correct branch before). 
+(remember about switching to the correct branch before).
 
 ## Use in your LaTeX project
 
