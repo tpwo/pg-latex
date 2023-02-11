@@ -32,8 +32,8 @@ your system. The template was successfully tested against TeXLive 2022.
 
 ### Overleaf
 
-If you prefer working in Overleaf.com, here you can access the files
-for this template: <https://www.overleaf.com/read/mngqxzfvdhpk>.
+If you prefer working in Overleaf, here you can access the files for
+this template: <https://www.overleaf.com/read/mngqxzfvdhpk>.
 
 ## How to use?
 
@@ -64,13 +64,13 @@ config
   \_ preamble.sty      # The heart of the template with most settings
   \_ bibliography.bib  # Put your bibliography positions here
   \_ macros.sty        # Define your macros here
-chapters # A tex file per chapter
+chapters # A TeX file per chapter
   \_ 01.tex
   \_ 02.tex
 figures
   \_ Graphics, images etc.
 misc
-  \_ Tex files which are not chapters but are part of the thesis
+  \_ TeX files which are not chapters but are part of the thesis
 pdf
   \_ Here you should put PDFs which will be included as separate pages
      into your thesis
@@ -83,9 +83,8 @@ tables
 
 In some places, you can notice a bit strange formatting with LaTeX
 comments `%` at the end of lines. This was done to prevent automatic
-wrapping of lines by
-[stkb/Rewrap](https://marketplace.visualstudio.com/items?itemName=stkb.rewrap)
-VS Code extension.
+wrapping of lines by [stkb/Rewrap](https://github.com/stkb/Rewrap) VS
+Code extension.
 
 ## See also
 
