@@ -39,9 +39,9 @@ this template: <https://www.overleaf.com/read/mngqxzfvdhpk>.
 
 This repo should be treated a sample project, so you're supposed to copy
 the files and edit them freely. The most of the actual settings live in
-`config/preamble.sty`, and to be compliant with PG, you probably don't
-want to modify existing settings there unless you're fixing something
-(pull request is welcomed in this case).
+`config/preamble.sty`. To be compliant with PG, you probably don't want
+to modify existing settings there unless you're fixing something (pull
+request is welcomed in this case).
 
 Depending on your needs, you might want to include more packages and
 settings in this file to get access to some more niche LaTeX features
