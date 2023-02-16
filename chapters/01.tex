@@ -70,6 +70,34 @@ one w wykazie literatury dopiero po tym jak zostaną zacytowane w tekście
 przy użyciu \mono{{\textbackslash}cite}. Jako przykład możemy zacytować
 wspomnianą już książkę o LaTeXu \cite{book:latex}.
 
+\subsubsection{Równania}
+
+Równania najprościej definiować jest przy pomocy wbudowanego w LateXa
+środowiska \mono{{\textbackslash}equation}, które wspiera wstawianie
+symboli w trybie matematycznym. Równania również można oznaczać
+etykietami, tak żeby oznaczyć je w tekście, ale w ich przypadku nie jest
+to wymagane. W tym przypadku możemy odnieść się do równania
+\ref{eq:przykladowe-rownanie}.
+
+\begin{equation} \label{eq:przykladowe-rownanie}
+    \Delta p = K_s (\frac{1}{T_0} - \frac{1}{T_s}) h
+\end{equation}
+
+gdzie:
+
+\begin{conditions}
+    \Delta p &  wielkość różnicy ciśnień $[Pa]$ \\
+    K_s      &  współczynnik przeliczeniowy równy $3460$ \\
+    T_0      &  temperatura powietrza zewnętrznego $[K]$ \\
+    T_s      &  temperatura powietrza wewnętrznego $[K]$ \\
+    h        &  odległość od płaszczyzny obojętnej $[m]$ \\
+\end{conditions}
+
+Każde równanie powinno używać symboli, które zostały jednoznacznie
+zdefiniowane. Dobrym narzędziem jest do tego środowisko
+\mono{{\textbackslash}conditions}, którego definicja znajduje się w tym
+szablonie.
+
 \subsubsection{Dobre praktyki}
 
 LaTeX domyślnie używa większego odstępu między dwoma zdaniami niż między
