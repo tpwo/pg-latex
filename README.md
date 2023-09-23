@@ -7,9 +7,12 @@ compliant with editorial guidelines from the year 2018 which are
 available on the [university
 website](https://pg.edu.pl/documents/8597924/15531473/ZR%2022-2018)
 (document contains guidelines in Polish and English). Some inspiration
-was taken also from [guidelines from the year
+was taken also from [the guidelines from the year
 2014](https://eti.pg.edu.pl/documents/1115629/0/zarz%C4%85dzenie%20wytyczne%20pracy)
-which are more detailed than the latest version.
+which are more detailed than the latest version. The template is also
+very likely to be compliant with [the newest guidelines from 2022](
+https://cdn.files.pg.edu.pl/eti/Dziekanat/regulaminy/WYTYCZNE%20%20DLA%20%20AUTOR%C3%93W%20%20PRAC%20%20I%20%20PROJEKT%C3%93W%20%20DYPLOMOWYCH%20%20na%20PG.pdf)
+but this wasn't throughly verified.
 
 ## Supported languages
 
