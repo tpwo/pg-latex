@@ -40,7 +40,7 @@ this template: <https://www.overleaf.com/read/mngqxzfvdhpk>.
 
 ## How to use?
 
-This repo should be treated a sample project, so you're supposed to copy
+This repo should be treated as a sample project, so you're supposed to copy
 the files and edit them freely. The most of the actual settings live in
 `config/preamble.sty`. To be compliant with PG, you probably don't want
 to modify existing settings there unless you're fixing something (pull
