@@ -52,7 +52,7 @@ provided by packages not included in the template by default.
 
 ## Structure and conventions
 
-The below diagram describes all important parts of the template. You
+Below diagram describes all important parts of the template. You
 should also take a look at the notes in the example chapter which
 describes how to add figures, tables, and citations along with some good
 practices. It's a good idea to analyze both the raw TeX, and the
