@@ -61,8 +61,8 @@ above).
 
 ```
 main.tex
- \_ Entry point of the template, start here to understand how the rest
-    of the files is referenced
+  \_ Entry point of the template, start here to understand how the rest
+     of the files is referenced
 config
   \_ preamble.sty      # The heart of the template with most settings
   \_ bibliography.bib  # Put your bibliography positions here
