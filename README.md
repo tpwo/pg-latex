@@ -38,6 +38,19 @@ your system. The template was successfully tested against TeXLive 2022.
 If you prefer working in Overleaf, here you can access the files for
 this template: <https://www.overleaf.com/read/mngqxzfvdhpk>.
 
+### Dev Container
+
+This repository includes a dev container configuration for VS Code. Use it to get
+a consistent LaTeX environment without installing TeXLive locally. Simply open
+the project in VS Code with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
+
+### Automated Builds
+
+The repository includes a GitHub Actions workflow that automatically builds the
+PDF on every pull request. Output PDF will be uploaded as an artifact of the
+workflow run. New releases are created automatically on every push to the default
+branch with the generated PDF attached.
+
 ## How to use?
 
 This repo should be treated as a sample project, so you're supposed to copy

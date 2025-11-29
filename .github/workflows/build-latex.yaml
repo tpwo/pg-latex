@@ -1,0 +1,54 @@
+name: Build LaTeX Document
+
+on:
+  push:
+    branches:
+    - main
+    - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6
+
+    - uses: xu-cheng/texlive-action@v3
+      with:
+        run: latexmk -pdf main.tex
+
+    - name: Upload PDF as artifact (for PRs)
+      if: github.event_name == 'pull_request'
+      uses: actions/upload-artifact@v5
+      with:
+        name: LaTeX Document
+        path: main.pdf
+        retention-days: 30
+
+    - name: Get current date
+      if: github.event_name == 'push'
+      id: date
+      run: |
+        echo "pretty_date=$(date +'%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
+        echo "date=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
+
+    - name: Create release (for main branch)
+      if: github.event_name == 'push' && github.repository != 'tpwo/pg-latex'
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: ${{ steps.date.outputs.date }}
+        name: ${{ github.event.head_commit.message }} - ${{ steps.date.outputs.pretty_date }}
+        body: |
+          Automatically generated LaTeX document from commit ${{ github.sha }}
+
+          Built on: ${{ steps.date.outputs.pretty_date }}
+        files: main.pdf
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
