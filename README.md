@@ -12,7 +12,7 @@ was taken also from [the guidelines from the year
 which are more detailed than the latest version. The template is also
 very likely to be compliant with [the newest guidelines from 2022](
 https://cdn.files.pg.edu.pl/eti/Dziekanat/regulaminy/WYTYCZNE%20%20DLA%20%20AUTOR%C3%93W%20%20PRAC%20%20I%20%20PROJEKT%C3%93W%20%20DYPLOMOWYCH%20%20na%20PG.pdf)
-but this wasn't throughly verified.
+but this wasn't thoroughly verified.
 
 ## Supported languages
 
