@@ -16,6 +16,8 @@ but this wasn't thoroughly verified.
 
 ## Supported languages
 
+Test CI.
+
 The only supported language is Polish, however it shouldn't be very hard
 to adjust the template for writing in English. Polish requires
 additional options, so some of the changes is just removing
