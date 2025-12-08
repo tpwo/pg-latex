@@ -5,7 +5,7 @@
   "runServices": ["latex"],
   "shutdownAction": "stopCompose",
   "workspaceFolder": "/workspace",
-  "postCreateCommand": "pre-commit install || echo 'Warning: pre-commit installation failed'",
+  "postCreateCommand": "pre-commit install-hooks && pre-commit install || echo 'Warning: pre-commit installation failed'",
   "customizations": {
     "vscode": {
       "extensions": [
