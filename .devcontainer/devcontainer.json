@@ -29,7 +29,7 @@
         "files.associations": {
           "*.tex": "latex"
         },
-        "latex-workshop.formatting.latexindent.path": "latexindent",
+        "latex-workshop.formatting.latex": "latexindent",
         "latex-workshop.formatting.latexindent.args": [
           "-c",
           "%DIR%/",
