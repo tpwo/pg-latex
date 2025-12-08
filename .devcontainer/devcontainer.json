@@ -1,0 +1,42 @@
+{
+  "name": "pg-latex",
+  "dockerComposeFile": ["docker-compose.yaml"],
+  "service": "latex",
+  "runServices": ["latex"],
+  "shutdownAction": "stopCompose",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "pre-commit install-hooks && pre-commit install || echo 'Warning: pre-commit installation failed'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "james-yu.latex-workshop",
+        "eamodio.gitlens",
+        "shardulm94.trailing-spaces",
+        "stkb.rewrap",
+        "vscode-icons-team.vscode-icons",
+        "MS-vsliveshare.vsliveshare",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-polish",
+        "usernamehw.errorlens"
+      ],
+      "settings": {
+        "files.eol": "\n",
+        "latex-workshop.linting.chktex.enabled": true,
+        "latex-workshop.linting.chktex.exec.path": "chktex",
+        "latex-workshop.latex.clean.subfolder.enabled": true,
+        "latex-workshop.latex.autoClean.run": "onBuilt",
+        "editor.formatOnSave": true,
+        "files.associations": {
+          "*.tex": "latex"
+        },
+        "latex-workshop.formatting.latex": "latexindent",
+        "latex-workshop.formatting.latexindent.args": [
+          "-c",
+          "%DIR%/",
+          "%TMPFILE%",
+          "-y=defaultIndent: '%INDENT%'"
+        ]
+      }
+    }
+  }
+}
