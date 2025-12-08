@@ -1,11 +1,7 @@
 FROM qmcgaw/latexdevcontainer:latest-full
 
-RUN apt-get update \
-    && apt-get install -y python3 python3-venv python3-pip --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/*
+COPY --from=ghcr.io/astral-sh/uv:0.9.16 /uv /uvx /bin/
 
-RUN python3 -m venv /opt/venv \
-    && /opt/venv/bin/pip install --upgrade pip \
-    && /opt/venv/bin/pip install pre-commit
+RUN uv tool install pre-commit --with pre-commit-uv
 
-ENV PATH="/opt/venv/bin:$PATH"
+ENV PATH="/root/.local/bin/:$PATH"
