@@ -6,8 +6,6 @@ services:
     - ../:/workspace
     - ~/.ssh:/root/.ssh   # SSH keys for commit signing/accessing remote repositories
     - /var/run/docker.sock:/var/run/docker.sock   # Share Docker daemon for DinD and avoid warnings
-    - ~/.zsh_history:/root/.zsh_history:z
-    - ~/.bash_history:/root/.bash_history:z
     environment:
     - TZ=Europe/Warsaw   # Set timezone to avoid warnings
     entrypoint: [sleep, infinity]
